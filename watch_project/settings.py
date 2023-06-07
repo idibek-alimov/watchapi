@@ -134,6 +134,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+WSGI_APPLICATION = 'watch_project.wsgi.app'
 
 STATIC_URL = 'static/'
 
