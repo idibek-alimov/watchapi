@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.urls import reverse
 # Register your models here.
-from .models import Order,Product
+from .models import Order,Product,Discount
 
 class productAdmin(admin.ModelAdmin):
     list_display = ["name"]
@@ -40,3 +40,4 @@ class orderAdmin(admin.ModelAdmin):
 
 admin.site.register(Product,productAdmin)    
 admin.site.register(Order,orderAdmin)
+admin.site.register(Discount)
