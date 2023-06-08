@@ -66,9 +66,9 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = (
 "http://localhost:3000",
 "http://localhost:8000",
-"*.netlify.app"
+"https://*.netlify.app"
 )
-CSRF_TRUSTED_ORIGINS = ["http://emample.com","http://localhost:8080","http://localhost:3000","*.netlify.app]
+CSRF_TRUSTED_ORIGINS = ["http://emample.com","http://localhost:8080","http://localhost:3000","https://*.netlify.app"]
 
 ROOT_URLCONF = 'watch_project.urls'
 
@@ -137,10 +137,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 WSGI_APPLICATION = 'watch_project.wsgi.app'
 
-STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [BASE_DIR / "static"] # new
-STATIC_ROOT = BASE_DIR / "staticfiles" # new
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+#STATIC_ROOT = BASE_DIR / "static" # new
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" # new
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
