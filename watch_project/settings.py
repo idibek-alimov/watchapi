@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-i+fkuuxnk&_0xefrg=)ww0r7gbzz9gnk4@eook7^mls1e84k)+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+CORS_ORIGIN_ALLOW_ALL = DEBUG
 ALLOWED_HOSTS = ["*"]
 
 
@@ -66,8 +66,9 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = (
 "http://localhost:3000",
 "http://localhost:8000",
+"*.netlify.app"
 )
-CSRF_TRUSTED_ORIGINS = ["http://emample.com","http://localhost:8080","http://localhost:3000"]
+CSRF_TRUSTED_ORIGINS = ["http://emample.com","http://localhost:8080","http://localhost:3000","*.netlify.app]
 
 ROOT_URLCONF = 'watch_project.urls'
 
