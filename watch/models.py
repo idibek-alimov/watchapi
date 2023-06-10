@@ -11,7 +11,7 @@ class Order(models.Model):
     customer_name = models.CharField(max_length=250)
     number = models.CharField(max_length=250)
     comment = models.TextField(blank=True)
-    products = models.ManyToManyField(Product)#, verbose_name=_(""))
+    products = models.ManyToManyField(Product,blank=True,null=True)#, verbose_name=_(""))
 
 class Discount(models.Model):
     time = models.DateTimeField()
